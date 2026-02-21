@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="numRango()">Validador de Rango</button>
+    <button onclick="nomLista()">Buscador en Array</button>
+    <button onclick="acumulador()">Acumulador</button>
+    <button onclick="inversor()">Inversor de palabras</button>
+    <button onclick="filtroPar()">Filtrado de pares</button>
+    <button onclick="loginIntentos()">Login con intentos</button>
+    <button onclick="generadorPatrones()">Generador de patrones</button>
+    <button onclick="numMayorArray()">Máximo de una lista</button>
+     <button onclick="contarVocales()">Contador de vocales</button>
+    <script>
+        function numRango() {
+            let num = parseInt(prompt("Dime un número"));
+            if (num >= 10 && num <= 20) {
+                alert("El número está entre 10 y 20");
+            } else {
+                alert("El número no está entre 10 y 20");
+            }
+        }
+        function nomLista() {
+            let nombre = prompt("Dime un nombre");
+            let nombres = ['María', 'Carlos', "Pedro", "Juan", "Rosa"];
+            let encontrado = false;
+            for (let i = 0; i < nombres.length; i++) {
+                if (nombres[i] == nombre) {
+                    encontrado = true;
+                    break;
+                }
+            }
+            if (encontrado) {
+                alert("El nombre " + nombre + " está en la lista");
+            } else {
+                alert("El nombre " + nombre + " no está en la lista");
+            }
+        }
+        function acumulador() {
+            let suma = 0;
+            let num;
+            while (num != 0) {
+                num = parseInt(prompt("Dame números. Introduce un 0 para no ingresar más"));
+                suma = suma + num;
+            }
+            alert("La suma total es " + suma);
+        }
+        function inversor() {
+            let palabra = prompt("Dame una palabra y la invierto");
+            let invertida = "";
+            for (let i = palabra.length - 1; i >= 0; i--) {
+                invertida = invertida + palabra[i];
+            }
+            alert("La palabra " + palabra + " al reves es " + invertida);
+        }
+        function filtroPar() {
+            let numPares;
+            let array = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+            for (let i = 0; i <= array.length; i++) {
+                if (array[i] % 2 == 0) {
+                    numPares = numPares + " " + array[i];
+                }
+            }
+            alert("Los numeros pares del array son " + numPares);
+        }
+        function loginIntentos() {
+            let clave = 1234;
+            let contador = 1;
+            do {
+                let intentos = 4 - contador;
+                let claveUsuario = prompt("Escribe una clave. Tienes " + intentos + " intentos");
+                if (claveUsuario == clave) {
+                    alert("Clave correcta");
+                    break;
+                } else {
+                    alert("Clave incorrecta");
+                    contador++;
+                    if (contador >= 4) {
+                        alert("Has agotado tus intentos")
+                    }
+                }
+
+            } while (contador <= 3);
+        }
+        function generadorPatrones() {
+            let num = prompt("Dame un número");
+            let asteriscos = "";
+            for (let i = 0; i < num; i++) {
+                asteriscos = asteriscos + "*"
+            }
+            alert("Pide sacarlo por consola pero también lo saco por aquí para que se vea claro " + asteriscos);
+            console.log(asteriscos);
+        }
+        function numMayorArray() {
+            let contador = 1;
+            let array = [];
+            do {
+                let num = parseInt(prompt("Dame un número"));                
+                array.push(num);
+                contador++;
+            } while (contador <= 5);
+            let mayor = array[0];
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] > mayor) {
+                    mayor = array[i]
+                }
+            }
+            if (array.length == 0) {
+                alert("El array está vacío");
+            } else {
+                alert("El número mayor del array es " + mayor);
+            }
+        }
+        function contarVocales(){
+            let frase = prompt("Escribe una frase");
+            let contador = 0;            
+            for (let i = 0; i < frase.length; i++) {
+                if (frase[i] == 'a') {
+                    contador++;
+                }
+            }
+            alert("En la frase \"" + frase + "\" hay " + contador + " vocales");
+        }
+    </script>
+</body>
+
+</html>
