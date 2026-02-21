@@ -16,7 +16,7 @@
     <button onclick="loginIntentos()">Login con intentos</button>
     <button onclick="generadorPatrones()">Generador de patrones</button>
     <button onclick="numMayorArray()">Máximo de una lista</button>
-     <button onclick="contarVocales()">Contador de vocales</button>
+     <button onclick="contarVocales()">Contador de vocales "a"</button>
     <script>
         function numRango() {
             let num = parseInt(prompt("Dime un número"));
@@ -37,9 +37,9 @@
                 }
             }
             if (encontrado) {
-                alert("El nombre " + nombre + " está en la lista");
+                alert("El nombre " + nombre + " ESTÁ en la lista " + "(" + nombres + ")");
             } else {
-                alert("El nombre " + nombre + " no está en la lista");
+                alert("El nombre " + nombre + " NO ESTÁ en la lista " + "(" + nombres + ")");
             }
         }
         function acumulador() {
@@ -60,14 +60,14 @@
             alert("La palabra " + palabra + " al reves es " + invertida);
         }
         function filtroPar() {
-            let numPares;
+            let numPares = "";
             let array = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
             for (let i = 0; i <= array.length; i++) {
                 if (array[i] % 2 == 0) {
                     numPares = numPares + " " + array[i];
                 }
             }
-            alert("Los numeros pares del array son " + numPares);
+            alert("Los numeros pares del array " + array + " son " + numPares);
         }
         function loginIntentos() {
             let clave = 1234;
@@ -101,7 +101,7 @@
             let contador = 1;
             let array = [];
             do {
-                let num = parseInt(prompt("Dame un número"));                
+                let num = parseInt(prompt("Dame un número (5)"));                
                 array.push(num);
                 contador++;
             } while (contador <= 5);
@@ -125,7 +125,7 @@
                     contador++;
                 }
             }
-            alert("En la frase \"" + frase + "\" hay " + contador + " vocales");
+            alert("En la frase \"" + frase + "\" hay " + contador + " vocales \"a\"");
         }
     </script>
 </body>
